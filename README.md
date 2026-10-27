@@ -33,11 +33,11 @@ capacity, or a firmware filename is not sufficient evidence of compatibility.
 The IBM image contains a native 800 GB CPU1 variant. That fact does not make
 the conversion officially supported for the original HP part number.
 
-No cold power-cycle, long endurance test, full-media write/read, power-loss test,
-or RAID-controller compatibility matrix has been completed. Four successful
-1 MiB checks establish basic I/O only. The generalized scripts in this repository
-were tested offline; the hardware result used the earlier device-specific
-implementation of the same command sequence.
+Testing has been fairly limited, but no problems have been encountered. The
+converted drive has passed a cold power-cycle, direct write/read checks, and
+additional fio testing. Write throughput has been very steady. No performance
+improvement over the 3PAR firmware was observed; whether throughput decreased
+has not been established by a controlled comparison.
 
 ## What is included
 
@@ -228,10 +228,13 @@ neither a full-media test nor a performance benchmark.
 
 The tested drive retained write cache disabled. The scripts record MODE pages
 but do not silently change cache policy; check the settings required by your
-application separately. Plan a cold power-cycle and longer validation before
-relying on a converted drive.
+application separately. Validate your own converted drive before relying on it.
 
 ## Development and evidence limits
+
+The generalized scripts in this repository were tested offline; the hardware
+conversion used the earlier device-specific implementation of the same command
+sequence.
 
 Run the offline tests with:
 
