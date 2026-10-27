@@ -1,0 +1,15 @@
+/work/
+/backups/
+/private/
+__pycache__/
+*.py[cod]
+*.bin
+*.dob
+*.zip
+*.7z
+*.iso
+*.tar
+*.gz
+*.log
+.env
+.venv/
